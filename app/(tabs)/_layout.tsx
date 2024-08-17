@@ -7,12 +7,12 @@ import Colors from '@/constants/Colors';
 import { useColorScheme } from '@/components/useColorScheme';
 import { useClientOnlyValue } from '@/components/useClientOnlyValue';
 
-// You can explore the built-in icon families and icons on the web at https://icons.expo.fyi/
 function TabBarIcon(props: {
   name: React.ComponentProps<typeof FontAwesome>['name'];
   color: string;
+  size?: number; // size 속성 추가
 }) {
-  return <FontAwesome size={28} style={{ marginBottom: -3 }} {...props} />;
+  return <FontAwesome size={props.size || 23} style={{ marginBottom: 0 }} {...props} />; // 기본 크기 24로 설정
 }
 
 export default function TabLayout() {
@@ -22,15 +22,20 @@ export default function TabLayout() {
     <Tabs
       screenOptions={{
         tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
-        // Disable the static render of the header on web
-        // to prevent a hydration error in React Navigation v6.
         headerShown: useClientOnlyValue(false, true),
+        tabBarLabelPosition: 'below-icon',
+        tabBarStyle: {
+          paddingBottom: 5,
+        },
+        tabBarLabelStyle: {
+          fontSize: 12,
+        },
       }}>
       <Tabs.Screen
         name="index"
         options={{
-          title: 'Tab One',
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+          title: 'Detection',
+          tabBarIcon: ({ color }) => <TabBarIcon name="eye" color={color} size={23} />, // 아이콘 크기 24로 설정
           headerRight: () => (
             <Link href="/modal" asChild>
               <Pressable>
@@ -48,10 +53,24 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
-        name="two"
+        name="gallery"
         options={{
-          title: 'Tab Two',
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+          title: 'Gallery',
+          tabBarIcon: ({ color }) => <TabBarIcon name="image" color={color} size={23} />, // 아이콘 크기 24로 설정
+        }}
+      />
+      <Tabs.Screen
+        name="memo"
+        options={{
+          title: 'Memo',
+          tabBarIcon: ({ color }) => <TabBarIcon name="pencil" color={color} size={23} />, // 아이콘 크기 24로 설정
+        }}
+      />
+      <Tabs.Screen
+        name="map"
+        options={{
+          title: 'Map',
+          tabBarIcon: ({ color }) => <TabBarIcon name="map" color={color} size={23} />, // 아이콘 크기 24로 설정
         }}
       />
     </Tabs>
