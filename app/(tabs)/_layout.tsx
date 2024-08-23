@@ -12,7 +12,7 @@ function TabBarIcon(props: {
   color: string;
   size?: number; // size 속성 추가
 }) {
-  return <FontAwesome size={props.size || 23} style={{ marginBottom: 0 }} {...props} />; // 기본 크기 24로 설정
+  return <FontAwesome size={props.size || 23} style={{ marginBottom: 0 }} {...props} />;  //아이콘 크기 기본 23
 }
 
 export default function TabLayout() {
@@ -35,7 +35,7 @@ export default function TabLayout() {
         name="index"
         options={{
           title: 'Detection',
-          tabBarIcon: ({ color }) => <TabBarIcon name="eye" color={color} size={23} />, // 아이콘 크기 24로 설정
+          tabBarIcon: ({ color }) => <TabBarIcon name="eye" color={color} size={23} />,
           headerRight: () => (
             <Link href="/modal" asChild>
               <Pressable>
@@ -56,21 +56,21 @@ export default function TabLayout() {
         name="gallery"
         options={{
           title: 'Gallery',
-          tabBarIcon: ({ color }) => <TabBarIcon name="image" color={color} size={23} />, // 아이콘 크기 24로 설정
+          tabBarIcon: ({ color }) => <TabBarIcon name="image" color={color} size={23} />,
         }}
       />
       <Tabs.Screen
         name="memo"
         options={{
           title: 'Memo',
-          tabBarIcon: ({ color }) => <TabBarIcon name="pencil" color={color} size={23} />, // 아이콘 크기 24로 설정
+          tabBarIcon: ({ color }) => <TabBarIcon name="pencil" color={color} size={23} />,
         }}
       />
       <Tabs.Screen
         name="map"
         options={{
           title: 'Map',
-          tabBarIcon: ({ color }) => <TabBarIcon name="map" color={color} size={23} />, // 아이콘 크기 24로 설정
+          tabBarIcon: ({ color }) => <TabBarIcon name="map" color={color} size={23} />,
         }}
       />
     </Tabs>
