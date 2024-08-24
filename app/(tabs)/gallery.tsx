@@ -1,3 +1,4 @@
+/*
 import React, { useState } from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, Image, FlatList, Platform } from 'react-native';
 import ImageViewing from 'react-native-image-viewing';
@@ -74,3 +75,4 @@ const styles = StyleSheet.create({
     margin: 5,
   },
 });
+*/

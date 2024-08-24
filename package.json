@@ -16,9 +16,9 @@
     "@expo/vector-icons": "^14.0.2",
     "@react-navigation/native": "^6.1.18",
     "@types/react": "~18.3.4",
-    "expo": "^51.0.30",
-    "expo-camera": "~15.0.14",
-    "expo-dev-client": "~4.0.24",
+    "expo": "~51.0.31",
+    "expo-camera": "~15.0.15",
+    "expo-dev-client": "~4.0.25",
     "expo-font": "~12.0.9",
     "expo-linking": "~6.3.1",
     "expo-media-library": "~16.0.4",
@@ -44,7 +44,8 @@
     "react-native-svg": "15.2.0",
     "react-native-web": "~0.19.12",
     "recoil": "^0.7.7",
-    "typescript": "^5.5.4"
+    "typescript": "^5.5.4",
+    "@react-native-community/datetimepicker": "8.0.1"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",
