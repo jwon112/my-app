@@ -1,4 +1,3 @@
-/*
 import React, { useState } from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, Image, FlatList, Platform } from 'react-native';
 import ImageViewing from 'react-native-image-viewing';
@@ -38,7 +37,7 @@ export default function TabGalleryScreen() {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Tab Gallery</Text>
+      <Text style={styles.title}>갤러리</Text>
       <FlatList
         data={images}
         renderItem={renderItem}
@@ -75,4 +74,3 @@ const styles = StyleSheet.create({
     margin: 5,
   },
 });
-*/
