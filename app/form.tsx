@@ -5,7 +5,7 @@ import DateTimePicker, { DateTimePickerEvent } from '@react-native-community/dat
 import { DateTimePickerAndroid } from '@react-native-community/datetimepicker';
 import { Platform } from "react-native";
 
-const Example = () => {
+const FormScreen = () => {
   const [date, setDate] = useState(new Date());
   const [time, setTime] = useState<string | undefined>(undefined);
   const [mode, setMode] = useState<'date' | 'time'>('date');
@@ -59,7 +59,7 @@ const Example = () => {
           </Text>
           <FormControl mb="5">
             <Input />
-            <FormControl.HelperText>Give your project a title.</FormControl.HelperText>
+              {/* <FormControl.HelperText>제목을 자유롭게 입력하세요.</FormControl.HelperText>  */}
           </FormControl>
           <Divider />
         </Box>
@@ -107,7 +107,7 @@ const Example = () => {
               <Input placeholder="위도" flex={1} />
               <Input placeholder="경도" flex={1} />
             </HStack>
-            <FormControl.HelperText>아이콘을 터치해서 위치를 지정하세요.</FormControl.HelperText>
+            {/*<FormControl.HelperText>아이콘을 터치해서 위치를 지정하세요.</FormControl.HelperText>*/}
           </FormControl>
           <Divider />
         </Box>
@@ -205,7 +205,7 @@ const Example = () => {
                 까치
               </Text>
               <FormControl mb="5">
-                <Input placeholder="까치" />
+                <Input placeholder="까치 머릿수" />
               </FormControl>
             </View>
 
@@ -214,7 +214,7 @@ const Example = () => {
                 참새
               </Text>
               <FormControl mb="5">
-                <Input placeholder="참새" />
+                <Input placeholder="참새 머릿수" />
               </FormControl>
             </View>
 
@@ -223,7 +223,7 @@ const Example = () => {
                 비둘기
               </Text>
               <FormControl mb="5">
-                <Input placeholder="비둘기" />
+                <Input placeholder="비둘기 머릿수" />
               </FormControl>
             </View>
           </HStack>
@@ -243,7 +243,7 @@ export default () => {
   return (
     <NativeBaseProvider>
       <Center flex={1} px="3">
-        <Example />
+        <FormScreen />
       </Center>
     </NativeBaseProvider>
   );

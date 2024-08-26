@@ -4,7 +4,7 @@ import { Button, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { useFocusEffect } from '@react-navigation/native';
 import React from 'react';
 
-export default function App() {
+export default function CameraScreen() {
   const [facing, setFacing] = useState<CameraType>('back');
   const [permission, requestPermission] = useCameraPermissions();
   const [isCameraActive, setIsCameraActive] = useState(false);
@@ -39,7 +39,7 @@ export default function App() {
     setFacing(current => (current === 'back' ? 'front' : 'back'));
   }
 
-  return (
+  return (    
     <View style={styles.container}>
       {isCameraActive && (
         <CameraView style={styles.camera} facing={facing}>

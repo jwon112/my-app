@@ -6,9 +6,7 @@ import { Text, View } from '@/components/Themed';
 export default function TabMapScreen() {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Tab Map</Text>
-      <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
-      <EditScreenInfo path="app/(tabs)/map.tsx" />
+      
     </View>
   );
 }

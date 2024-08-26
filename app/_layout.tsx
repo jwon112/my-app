@@ -7,6 +7,7 @@ import { useEffect } from 'react';
 import 'react-native-reanimated';
 
 import { useColorScheme } from '@/components/useColorScheme';
+import { NativeBaseProvider } from 'native-base';
 
 export {
   // Catch any errors thrown by the Layout component.
@@ -42,8 +43,11 @@ export default function RootLayout() {
     return null;
   }
 
-  return <RootLayoutNav />;
-}
+  return (
+    <NativeBaseProvider>
+      <RootLayoutNav />
+    </NativeBaseProvider>
+  );}
 
 function RootLayoutNav() {
   const colorScheme = useColorScheme();
@@ -53,6 +57,7 @@ function RootLayoutNav() {
       <Stack>
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
         <Stack.Screen name="modal" options={{ presentation: 'modal' }} />
+        <Stack.Screen name="form" options={{ title: 'Form' }} />
       </Stack>
     </ThemeProvider>
   );
