@@ -1,12 +1,36 @@
-import { StyleSheet } from 'react-native';
-
-import EditScreenInfo from '@/components/EditScreenInfo';
-import { Text, View } from '@/components/Themed';
+import React from 'react';
+import { StyleSheet, View } from 'react-native';
+import MapView, { Marker } from 'react-native-maps';
 
 export default function TabMapScreen() {
   return (
     <View style={styles.container}>
-      
+      <MapView
+        style={styles.map}
+        initialRegion={{
+          latitude: 37.5665,
+          longitude: 126.9780, // 서울 좌표
+          latitudeDelta: 0.0922,
+          longitudeDelta: 0.0421,
+        }}
+      >
+        <Marker
+          coordinate={{
+            latitude: 37.5665,
+            longitude: 126.9780,
+          }}
+          title="서울"
+          description="서울 중심부"
+        />
+        <Marker
+          coordinate={{
+            latitude: 36.5665,
+            longitude: 126.9780,
+          }}
+          title="서울"
+          description="서울 중심부"
+        />
+      </MapView>
     </View>
   );
 }
@@ -14,16 +38,8 @@ export default function TabMapScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
   },
-  title: {
-    fontSize: 20,
-    fontWeight: 'bold',
-  },
-  separator: {
-    marginVertical: 30,
-    height: 1,
-    width: '80%',
+  map: {
+    flex: 1,
   },
 });
