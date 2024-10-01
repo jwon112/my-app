@@ -10,13 +10,11 @@ import { useColorScheme } from '@/components/useColorScheme';
 import { NativeBaseProvider } from 'native-base';
 
 export {
-  // Catch any errors thrown by the Layout component.
   ErrorBoundary,
 } from 'expo-router';
 
 export const unstable_settings = {
-  // Ensure that reloading on `/modal` keeps a back button present.
-  initialRouteName: '(tabs)',
+  initialRouteName: 'login', // login을 초기화면으로 설정
 };
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
@@ -28,7 +26,6 @@ export default function RootLayout() {
     ...FontAwesome.font,
   });
 
-  // Expo Router uses Error Boundaries to catch errors in the navigation tree.
   useEffect(() => {
     if (error) throw error;
   }, [error]);
@@ -47,7 +44,8 @@ export default function RootLayout() {
     <NativeBaseProvider>
       <RootLayoutNav />
     </NativeBaseProvider>
-  );}
+  );
+}
 
 function RootLayoutNav() {
   const colorScheme = useColorScheme();
@@ -55,6 +53,10 @@ function RootLayoutNav() {
   return (
     <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
       <Stack>
+        {/* login.tsx를 첫 화면으로 설정 */}
+        <Stack.Screen name="login" options={{ headerShown: false }} />
+        <Stack.Screen name="register" options={{ title: 'Register' }} />
+        {/* 로그인 성공 시에만 탭 네비게이션을 활성화 */}
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
         <Stack.Screen name="modal" options={{ presentation: 'modal' }} />
         <Stack.Screen name="form" options={{ title: 'Form' }} />
